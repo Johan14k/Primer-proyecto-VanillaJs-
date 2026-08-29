@@ -1,0 +1,56 @@
+<!-- 
+ Codificando la estructura principal de la aplicación.
+ Utilizamos etiquetas semánticas (header, main, section) para mejorar la lectura y el SEO.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Johan Adrián Alemán Novoa">
+    <title>IAWeb PokéDex</title>
+    <!-- link conecta este archivo HTML con nuestra hoja de estilos externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pantalla de inicio -->
+    <section id="welcome-screen" class="welcome-container">
+        <!-- class se usa para aplicar estilos en masa, id para identificar un elemento único en JS -->
+        <button class="btn2" id="btn-start">
+            <span class="spn2">Bienvenido profesor</span>
+        </button>
+    </section>
+
+    <!-- Toda la aplicación principal (oculta por defecto con style="display: none;") -->
+    <div id="main-app" style="display: none;">
+        <header>
+            <h1>Pokédex Web</h1>
+            <nav>
+                <button id="btn-catalog" class="input active">Catálogo</button>
+                <button id="btn-camera" class="input">Reconocimiento (Cámara)</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Vista de catálogo -->
+            <section id="catalog-view">
+                <div id="status-message">Cargando Pokémon...</div>
+                <div id="pokemon-grid" class="grid-container"></div>
+            </section>
+
+            <!-- Vista de cámara -->
+            <section id="camera-view" style="display: none;">
+                <h2>Reconocimiento Visual</h2>
+                <p>El módulo de cámara se implementará aquí.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Desarrollado por Johan Adrián Alemán Novoa</p>
+        </footer>
+    </div>
+
+    <!-- type="module" habilita el uso de import/export (ES6 modules) en app.js -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

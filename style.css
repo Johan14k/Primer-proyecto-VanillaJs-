@@ -1,0 +1,203 @@
+/*
+Colores y texturas dentro de mi pagina
+*/
+:root {
+    --poke-red: #EE1515;
+    --poke-dark: #222224;
+    --poke-light: #F0F0F0;
+    --poke-yellow: #FFCC00;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--poke-light);
+    color: var(--poke-dark);
+}
+
+/* --- Fondo de la antesala centrada --- */
+.welcome-container {
+    height: 100vh; /* 100% de la altura de la ventana visible (viewport height) */
+    display: flex; /* Activa flexbox para alinear elementos fácilmente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: var(--poke-red);
+}
+
+/* --- App --- */
+header {
+    background-color: var(--poke-red);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 1.5rem 0;
+}
+
+/* Botones */
+.input {
+    width: 250px; 
+    box-sizing: border-box; /* Incluye padding y bordes dentro del ancho total de 250px */
+    padding: 0.875rem;
+    font-size: 1rem;
+    border: 1.5px solid #000;
+    border-radius: 0.5rem;
+    box-shadow: 2.5px 3px 0 #000;
+    outline: none;
+    transition: ease 0.25s; /* Suaviza el cambio de estilos (como el hover) */
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Pseudo-clases: definen estilos basados en el estado de interacción del usuario */
+.input:focus, .input:hover, .input.active {
+    box-shadow: 5.5px 7px 0 black;
+    background-color: #f8f8f8;
+    transform: translateY(-2px); /* Mueve ligeramente el botón hacia arriba */
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor si la pantalla es mayor a 1200px */
+}
+
+#status-message {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.grid-container {
+    display: grid; /* Activa CSS Grid para crear la cuadrícula */
+    /* Crea columnas automáticas que miden mínimo 200px y crecen para llenar el espacio (1fr) */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2.5rem; /* Espacio entre tarjetas */
+    justify-items: center;
+}
+
+.pokemon-card {
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-8px);
+}
+
+.pokemon-card img {
+    max-width: 100px;
+    height: 100px;
+    object-fit: contain; /* Evita que la imagen se deforme al ajustarse a su caja */
+}
+
+.pokemon-card h3 {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.play-cry-btn {
+    background-color: var(--poke-yellow);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 90%;
+    color: var(--poke-dark);
+}
+
+.play-cry-btn:hover {
+    background-color: #e6b800;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* --- Botón Bienvenido Profesor --- */
+.btn2 {
+    position: relative; /* Permite posicionar ::before y ::after respecto a este botón */
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* ::before y ::after crean elementos visuales "falsos" por detrás del botón */
+.btn2::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 6px);
+    height: calc(100% + 2px);
+    background-color: #212121;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 50px);
+    background-color: #212121;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2:hover::before {
+    transform: translateY(-25px);
+    height: 0;
+}
+
+.btn2:hover::after {
+    transform: scaleX(0);
+    transition-delay: 0.15s;
+}
+
+.btn2:hover {
+    border: 2px solid #fefefe;
+}
+
+.btn2 .spn2 {
+    position: relative;
+    z-index: 3; /* Asegura que el texto quede por encima del fondo animado */
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
