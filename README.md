@@ -22,13 +22,11 @@ Funciona como el **controlador central** de la aplicación, uniendo la lógica d
 Gestiona los eventos del usuario (como los clics en los botones) para alternar fluidamente entre la pantalla de bienvenida, la vista del catálogo interactivo y la cámara.
 
 ### 🏗️ `index.html`
-Construye el **esqueleto semántico** de la aplicación utilizando etiquetas HTML.  
-Define las diferentes secciones visuales de la Pokédex, agrupando los menús y estructurando los contenedores que estarán ocultos o visibles según el estado de la aplicación.
+Construye el esqueleto de la aplicación utilizando etiquetas para organizar la lectura de la página.  Define las diferentes secciones visuales, agrupando los menús y las pantallas que estarán ocultas o visibles.  
 
 ### 🎨 `style.css`
-Aplica la paleta de colores, márgenes y la estructura (cuadrículas/flexbox) a todo el sitio web.  
-Es el responsable de la presentación visual: agrega animaciones fluidas, efectos 3D y sombras interactivas tanto a los botones (apoyado en Uiverse) como a las tarjetas de los Pokémon.
+Aplica los colores, márgenes y la estructura de cuadrícula a todo el sitio web.  Agrega animaciones, efectos 3D y sombras interactivas tanto a los botones como a las tarjetas.  
 
 ### 🖼️ `ui.js`
-Es el encargado de la **manipulación del DOM**. Toma los datos crudos obtenidos de la API y genera dinámicamente las tarjetas visuales en la página.  
+Toma los datos crudos de los Pokémon y genera las tarjetas visuales en la página.  Muestra la foto, el nombre y configura un botón para que el usuario pueda reproducir el sonido del Pokémon.  
 Se encarga de inyectar la fotografía, el nombre y de configurar el botón interactivo para que el usuario pueda escuchar el grito/sonido del Pokémon.
